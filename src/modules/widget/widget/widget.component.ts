@@ -1,5 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { WorkerService } from '../../service/worker.service';
+import { WorkerService } from '../../services/service/worker.service';
+
+/*
+
+The Widget Component works together with the WorkerService exposed application-wise
+by ServiceModule.
+
+All the Modules can import this Module and use this Component.
+
+*/
 
 @Component({
   selector: 'app-widget',

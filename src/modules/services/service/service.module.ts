@@ -1,5 +1,4 @@
 import { NgModule, ModuleWithProviders } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { WorkerService } from './worker.service';
 
 /*
@@ -11,15 +10,16 @@ Angular's HttpClientModule is a good example of a service module.
 
 The root AppModule is the only module that should import service modules.
 
+There will be some service modules that exists only to support other feature module
+of the application and that will be imported by those said modules.
+
 */
 
 // this module will be imported only by the AppModule,
 // the provided service will be used by feature and routed modules
 
 @NgModule({
-  imports: [
-    CommonModule
-  ],
+  imports: [],
   declarations: []
 })
 export class ServiceModule {

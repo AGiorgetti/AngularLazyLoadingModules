@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { WorkerService } from '../../service/worker.service';
+import { WorkerService } from '../../services/service/worker.service';
 
 @Component({
   selector: 'app-component2',

@@ -4,7 +4,6 @@ import { Component2Component } from './component2/component2.component';
 import { RouterModule } from '@angular/router';
 import { ROUTES } from './routed2.routes';
 import { WidgetModule } from '../widget/widget.module';
-import { ServiceModule } from '../service/service.module';
 
 @NgModule({
   imports: [

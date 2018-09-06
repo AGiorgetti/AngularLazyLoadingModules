@@ -18,7 +18,7 @@ import { ServiceModule } from '../modules/services/service/service.module';
     BrowserModule,
     RouterModule.forRoot(ROUTES),
 
-    ServiceModule.forRoot(),
+    ServiceModule, // .forRoot(), will not allow the threeshaking to remove the service code if unused
 
     // if we add the module here (or we add it to a feature module imported by the root module),
     // it will be embedded in the "main" bundle,

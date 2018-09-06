@@ -7,8 +7,8 @@ export class WorkerService {
   static instance = 0;
   private _instance: number;
 
-  public get name(): number {
-    return this._instance;
+  public get name(): string {
+    return `WorkerService (${this._instance})`;
   }
 
   constructor() {

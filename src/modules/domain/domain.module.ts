@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DomainComponent } from './domain/domain.component';
+import { SharedServiceModule } from '../services/shared-service/shared-service.module';
+import { WidgetModule } from '../widget/widget.module';
 
 /*
 
@@ -20,7 +22,9 @@ They might be imported by the root AppModule of a small application that lacks r
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    SharedServiceModule,
+    WidgetModule
   ],
   declarations: [DomainComponent],
   exports: [DomainComponent]

@@ -21,6 +21,44 @@ An Angular application is made up of several NgModules.
 
 A feature module is an organizational best practice: it delivers a cohesive set of functionality focused on a specific application need such as a user workflow, routing, or forms.
 
+## Dependency Injection
+
+You can configure injectors with providers at different levels of your app, by setting a metadata value in one of three places:
+
+In the `@Injectable()` decorator for the service itself.
+
+In the `@NgModule()` decorator for an NgModule.
+
+In the `@Component()` decorator for a Component.
+
+The `@Injectable()` decorator has the providedIn metadata option, where you can specify the provider of the decorated service class with the `root` injector, or with `the injector for a specific NgModule`.
+
+The `@NgModule()` and `@Component()` decorators have the providers metadata option, where you can configure `providers for NgModule-level or component-level injectors`. They will take over the @Injectable() decorator.
+
+**WARNING**
+
+There's a difference between:
+
+    static forChild(): ModuleWithProviders {
+      return {
+        ngModule: SharedServiceModule,
+        providers: [
+          SharedWorkerService
+        ]
+      };
+    }
+
+and:
+
+    @Injectable({
+      providedIn: SharedServiceModule
+    })
+    export class SharedWorkerService {
+      ...
+    }
+
+With the `@injectable()` options: if the module is imported in the AppModule and in some Lazy loaded modules, then the service will be a singleton application wise: it will be tied to the injector of the NgModule imported in the AppModule, because an explicit registration at the module level does not exists.
+
 ## Types of Modules
 
 There are 5 general categories of feature modules (also hybrods can exists):

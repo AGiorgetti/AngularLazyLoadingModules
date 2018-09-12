@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { LazyServiceModule } from './lazy-service.module';
 
+// WARNING: we know we'll have a circular dependency warning, the service is also registered in the
+//          module providers list.
 @Injectable({
   providedIn: LazyServiceModule
 })

@@ -14,6 +14,7 @@ export const ROUTES: Routes = [
   { path: 'routed1', loadChildren: '../modules/routed1/routed1.module#Routed1Module' },
   { path: 'routed2', loadChildren: '../modules/routed2/routed2.module#Routed2Module' },
 
+  // The same lazy loaded module under another path
   { path: 'routed1b', loadChildren: '../modules/routed1/routed1.module#Routed1Module' },
 
   // Handle all other routes
